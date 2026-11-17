@@ -1,16 +1,16 @@
 # polyguess
 
 [![CI](https://github.com/SAMARTHJAISWAL/polyguess/actions/workflows/ci.yml/badge.svg)](https://github.com/SAMARTHJAISWAL/polyguess/actions/workflows/ci.yml)
-[![Play today's snippet](https://img.shields.io/badge/play-today's%20snippet-38e0a8)](https://samarthjaiswal.github.io/polyguess/)
+[![Play today's snippet](https://img.shields.io/badge/play-today's%20snippet-38e0a8)](https://polyguess.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **A daily game for programmers. You see real code from a well-known open-source project, a few lines at a time. Which language is it?**
 
 You start with 3 lines and get six guesses. Every wrong guess shows more of the snippet, up to 14 lines. There are 47 languages, from Python and Go to Erlang, Prolog, Verilog and x86 assembly.
 
-**[Play today's snippet →](https://samarthjaiswal.github.io/polyguess/)**
+**[Play today's snippet →](https://polyguess.vercel.app/)**
 
-[![polyguess: a code snippet with three lines visible and the rest hidden as bars, next to the question "Which language is this?"](web/og.png)](https://samarthjaiswal.github.io/polyguess/)
+[![polyguess: a code snippet with three lines visible and the rest hidden as bars, next to the question "Which language is this?"](web/og.png)](https://polyguess.vercel.app/)
 
 ## How it plays
 
@@ -26,7 +26,7 @@ Hidden lines appear as bars matching each line's length and indentation, so you 
 ```
 polyguess #12 3/6 · 7 lines needed
 ⬛🟨🟩
-https://samarthjaiswal.github.io/polyguess/
+https://polyguess.vercel.app/
 ```
 
 Your streak and stats stay in your browser. Past days are in the 📅 archive.
