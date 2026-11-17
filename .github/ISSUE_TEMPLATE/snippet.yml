@@ -1,0 +1,24 @@
+name: Suggest a snippet
+description: 14 lines of real code from an open-source project under a permissive licence
+title: "Snippet: "
+labels: ["snippet idea"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link to the lines on GitHub (a permalink with a commit hash)
+      placeholder: https://github.com/owner/repo/blob/<commit>/path/to/file.rs#L120-L133
+    validations:
+      required: true
+  - type: input
+    id: lang
+    attributes:
+      label: Language
+      placeholder: Rust
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What makes it a good puzzle? (optional)
+      placeholder: Looks like Python for three lines, then the pattern matching gives it away.

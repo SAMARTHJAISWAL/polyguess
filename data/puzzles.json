@@ -1,0 +1,942 @@
+[
+  {
+    "lang": "Python",
+    "repo": "psf/requests",
+    "sha": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
+    "path": "src/requests/__init__.py",
+    "start": 81,
+    "end": 94,
+    "license": "Apache-2.0",
+    "code": "    if chardet_version:\n        major, minor, patch = chardet_version.split(\".\")[:3]\n        major, minor, patch = int(major), int(minor), int(patch)\n        # chardet_version >= 3.0.2, < 8.0.0\n        assert (3, 0, 2) <= (major, minor, patch) < (8, 0, 0)\n    elif charset_normalizer_version:\n        major, minor, patch = charset_normalizer_version.split(\".\")[:3]\n        major, minor, patch = int(major), int(minor), int(patch)\n        # charset_normalizer >= 2.0.0 < 4.0.0\n        assert (2, 0, 0) <= (major, minor, patch) < (4, 0, 0)\n    else:\n        warnings.warn(\n            \"Unable to find acceptable character detection dependency \"\n            \"(chardet or charset_normalizer).\","
+  },
+  {
+    "lang": "JavaScript",
+    "repo": "axios/axios",
+    "sha": "c0d4c900515a55bd1e258eee16adb25c404d56ed",
+    "path": "lib/core/mergeConfig.js",
+    "start": 23,
+    "end": 36,
+    "license": "MIT",
+    "code": "function mergeParams(a, b) {\n  const pending = [];\n  const copies = new WeakMap();\n  const empty = {};\n\n  function copy(target, source) {\n    if (!utils.isPlainObject(source)) {\n      return utils.isArray(source) ? source.slice() : source;\n    }\n\n    const base = utils.isPlainObject(target) ? target : empty;\n    let bases = copies.get(source);\n    if (!bases) {\n      bases = new WeakMap();"
+  },
+  {
+    "lang": "Rust",
+    "repo": "BurntSushi/ripgrep",
+    "sha": "178cc027e283fd965cb72d0a7395b219eada170c",
+    "path": "crates/globset/src/glob.rs",
+    "start": 54,
+    "end": 67,
+    "license": "Unlicense OR MIT",
+    "code": "        if let Some(lit) = pat.basename_literal() {\n            MatchStrategy::BasenameLiteral(lit)\n        } else if let Some(lit) = pat.literal() {\n            MatchStrategy::Literal(lit)\n        } else if let Some(ext) = pat.ext() {\n            MatchStrategy::Extension(ext)\n        } else if let Some(prefix) = pat.prefix() {\n            MatchStrategy::Prefix(prefix)\n        } else if let Some((suffix, component)) = pat.suffix() {\n            MatchStrategy::Suffix { suffix, component }\n        } else if let Some(ext) = pat.required_ext() {\n            MatchStrategy::RequiredExtension(ext)\n        } else if let Some(re) = pat.basename_regex() {\n            MatchStrategy::BasenameRegex(re)"
+  },
+  {
+    "lang": "Java",
+    "repo": "google/guava",
+    "sha": "fce80fd984c8227262a63972ccc68ae6f2ad0519",
+    "path": "guava/src/com/google/common/collect/AbstractMapBasedMultiset.java",
+    "start": 91,
+    "end": 104,
+    "license": "Apache-2.0",
+    "code": "    return new Iterator<E>() {\n      Map.@Nullable Entry<E, Count> toRemove;\n\n      @Override\n      public boolean hasNext() {\n        return backingEntries.hasNext();\n      }\n\n      @Override\n      @ParametricNullness\n      public E next() {\n        Map.Entry<E, Count> mapEntry = backingEntries.next();\n        toRemove = mapEntry;\n        return mapEntry.getKey();"
+  },
+  {
+    "lang": "Go",
+    "repo": "gin-gonic/gin",
+    "sha": "0f09c3a9b4626d9fe9979cf4d0521d6ae32ab646",
+    "path": "gin.go",
+    "start": 215,
+    "end": 228,
+    "license": "MIT",
+    "code": "func New(opts ...OptionFunc) *Engine {\n\tdebugPrintWARNINGNew()\n\tengine := &Engine{\n\t\tRouterGroup: RouterGroup{\n\t\t\tHandlers: nil,\n\t\t\tbasePath: \"/\",\n\t\t\troot:     true,\n\t\t},\n\t\tFuncMap:                template.FuncMap{},\n\t\tRedirectTrailingSlash:  true,\n\t\tRedirectFixedPath:      false,\n\t\tHandleMethodNotAllowed: false,\n\t\tForwardedByClientIP:    true,\n\t\tRemoteIPHeaders:        []string{\"X-Forwarded-For\", \"X-Real-IP\"},"
+  },
+  {
+    "lang": "Ruby",
+    "repo": "rails/rails",
+    "sha": "4f00fbc946c9ca055e6c1fbc7b40274625766be1",
+    "path": "activesupport/lib/active_support/colorize_logging.rb",
+    "start": 8,
+    "end": 21,
+    "license": "MIT",
+    "code": "    MODES = {\n      clear:     0,\n      bold:      1,\n      italic:    3,\n      underline: 4,\n    }.freeze\n\n    # ANSI sequence colors\n    BLACK   = \"\\e[30m\"\n    RED     = \"\\e[31m\"\n    GREEN   = \"\\e[32m\"\n    YELLOW  = \"\\e[33m\"\n    BLUE    = \"\\e[34m\"\n    MAGENTA = \"\\e[35m\""
+  },
+  {
+    "lang": "Swift",
+    "repo": "apple/swift-algorithms",
+    "sha": "8fdd7fe21dc07a4538d6b3b7c873f497ab4d60fe",
+    "path": "Sources/Algorithms/Chain.swift",
+    "start": 151,
+    "end": 164,
+    "license": "Apache-2.0",
+    "code": "  @inlinable\n  public func index(\n    _ i: Index,\n    offsetBy distance: Int,\n    limitedBy limit: Index\n  ) -> Index? {\n    if distance >= 0 {\n      return limit >= i\n        ? offsetForward(i, by: distance, limitedBy: limit)\n        : offsetForward(i, by: distance)\n    } else {\n      return limit <= i\n        ? offsetBackward(i, by: -distance, limitedBy: limit)\n        : offsetBackward(i, by: -distance)"
+  },
+  {
+    "lang": "Elixir",
+    "repo": "phoenixframework/phoenix",
+    "sha": "789f851c3cda02f56702a16700ebba48d270cbd3",
+    "path": "lib/phoenix/channel.ex",
+    "start": 428,
+    "end": 441,
+    "license": "MIT",
+    "code": "  @doc \"\"\"\n  Handle regular GenServer cast messages.\n\n  See `c:GenServer.handle_cast/2`.\n  \"\"\"\n  @callback handle_cast(msg :: term, socket :: Socket.t()) ::\n              {:noreply, Socket.t()}\n              | {:stop, reason :: term, Socket.t()}\n\n  @doc false\n  @callback code_change(old_vsn, Socket.t(), extra :: term) ::\n              {:ok, Socket.t()}\n              | {:error, reason :: term}\n            when old_vsn: term | {:down, term}"
+  },
+  {
+    "lang": "Solidity",
+    "repo": "OpenZeppelin/openzeppelin-contracts",
+    "sha": "7df9390d5989ea2cb7a70ad93f96245d8a82574e",
+    "path": "contracts/utils/BlockHeader.sol",
+    "start": 17,
+    "end": 30,
+    "license": "MIT",
+    "code": "    enum HeaderField {\n        ParentHash, // Since Frontier\n        OmmersHash, // Since Frontier\n        Coinbase, // Since Frontier\n        StateRoot, // Since Frontier\n        TransactionsRoot, // Since Frontier\n        ReceiptsRoot, // Since Frontier\n        LogsBloom, // Since Frontier\n        Difficulty, // Since Frontier\n        Number, // Since Frontier\n        GasLimit, // Since Frontier\n        GasUsed, // Since Frontier\n        Timestamp, // Since Frontier\n        ExtraData, // Since Frontier"
+  },
+  {
+    "lang": "PHP",
+    "repo": "symfony/symfony",
+    "sha": "5ea680555e45c2f53ed5d4fc7936f228cb92076a",
+    "path": "src/Symfony/Component/Console/Helper/FileInputHelper.php",
+    "start": 335,
+    "end": 348,
+    "license": "MIT",
+    "code": "    private static function tokenizePaths(string $input): array\n    {\n        $tokens = [];\n        $current = '';\n        $inToken = false;\n        $quote = null;\n        $length = \\strlen($input);\n\n        for ($i = 0; $i < $length; ++$i) {\n            $char = $input[$i];\n\n            if (null !== $quote) {\n                $current .= $char;\n                if ($char === $quote) {"
+  },
+  {
+    "lang": "Clojure",
+    "repo": "nextjournal/clerk",
+    "sha": "5f8a7ce2827ad61f520dea1f6f5e9cc779d11305",
+    "path": "src/nextjournal/clerk/analyzer.clj",
+    "start": 139,
+    "end": 152,
+    "license": "ISC",
+    "code": "        nodes (ana/nodes analyzed)\n        {:keys [vars declared]} (get-vars+forward-declarations nodes)\n        vars- (set/difference vars declared)\n        var (when (and (= 1 (count vars))\n                       (parser/deflike? form))\n              (first vars))\n        def-node (when var\n                   (first (filter (comp #{:def} :op) nodes)))\n        deref-deps (into #{}\n                         (comp (filter (comp #{#'deref} :var :fn))\n                               (keep #(-> % :args first))\n                               (filter :var)\n                               (keep (fn [{:keys [op var]}]\n                                       (when-not (= :the-var op)"
+  },
+  {
+    "lang": "R",
+    "repo": "tidyverse/ggplot2",
+    "sha": "87a95d9103536296c8334e72f9f722855cd16bcb",
+    "path": "R/all-classes.R",
+    "start": 363,
+    "end": 376,
+    "license": "MIT",
+    "code": "    warn_dots_empty()\n    S7::new_object(\n      S7::S7_object(),\n      data = data,\n      layers = layers,\n      scales = scales %||% scales_list(),\n      guides = guides %||% guides_list(),\n      mapping = mapping,\n      theme = theme %||% theme(),\n      coordinates = coordinates,\n      facet = facet,\n      layout = layout %||% ggproto(NULL, Layout),\n      labels = labels,\n      meta = meta,"
+  },
+  {
+    "lang": "V",
+    "repo": "vlang/v",
+    "sha": "eb484d68088e2ecc8340a35e4a710bf4510c8834",
+    "path": "vlib/os/command.c.v",
+    "start": 77,
+    "end": 90,
+    "license": "MIT",
+    "code": "\tbuf := [4096]u8{}\n\tmut res := strings.new_builder(1024)\n\tdefer { unsafe { res.free() } }\n\tunsafe {\n\t\tbufbp := &u8(&buf[0])\n\t\tfor C.fgets(&char(bufbp), 4096, c.f) != 0 {\n\t\t\trace_file_read()\n\t\t\tlen := vstrlen(bufbp)\n\t\t\tfor i in 0 .. len {\n\t\t\t\tif bufbp[i] == `\\n` {\n\t\t\t\t\tres.write_ptr(bufbp, i)\n\t\t\t\t\tfinal := res.str()\n\t\t\t\t\treturn final\n\t\t\t\t}"
+  },
+  {
+    "lang": "Julia",
+    "repo": "JuliaLang/julia",
+    "sha": "390e34dbeee6ee021cb199a4c528b4600422b527",
+    "path": "base/array.jl",
+    "start": 132,
+    "end": 145,
+    "license": "MIT",
+    "code": "macro _safeindex(ex)\n    return esc(_safeindex(ex))\nend\nfunction _safeindex(ex)\n    isa(ex, Expr) || return ex\n    if ex.head === :(=)\n        lhs = ex.args[1]\n        if isa(lhs, Expr) && lhs.head === :ref # xs[i] = x\n            rhs = ex.args[2]\n            xs = lhs.args[1]\n            args = Vector{Any}(undef, length(lhs.args)-1)\n            for i = 2:length(lhs.args)\n                args[i-1] = _safeindex(lhs.args[i])\n            end"
+  },
+  {
+    "lang": "SQL",
+    "repo": "postgres/postgres",
+    "sha": "11591f273e6a26fb55728b410538fa2627b19b28",
+    "path": "src/test/regress/sql/arrays.sql",
+    "start": 392,
+    "end": 405,
+    "license": "PostgreSQL",
+    "code": "select 33.4 = any (array[1,2,3]);\nselect 33.4 > all (array[1,2,3]);\n-- errors\nselect 33 * any ('{1,2,3}');\nselect 33 * any (44);\n-- nulls\nselect 33 = any (null::int[]);\nselect null::int = any ('{1,2,3}');\nselect 33 = any ('{1,null,3}');\nselect 33 = any ('{1,null,33}');\nselect 33 = all (null::int[]);\nselect null::int = all ('{1,2,3}');\nselect 33 = all ('{1,null,3}');\nselect 33 = all ('{33,null,33}');"
+  },
+  {
+    "lang": "Scala",
+    "repo": "scala/scala",
+    "sha": "632df4153c21bf0513f5735967fb1220185ab78a",
+    "path": "src/library/scala/collection/immutable/LazyList.scala",
+    "start": 1045,
+    "end": 1058,
+    "license": "Apache-2.0",
+    "code": "  override def hasDefiniteSize: Boolean = {\n    if (!isEvaluated) false\n    else if (isEmpty) true\n    else {\n      // Two-iterator trick (2x & 1x speed) for cycle detection.\n      var those = this\n      var these = tail\n      while (those ne these) {\n        if (!these.isEvaluated) return false\n        else if (these.isEmpty) return true\n        these = these.tail\n        if (!these.isEvaluated) return false\n        else if (these.isEmpty) return true\n        these = these.tail"
+  },
+  {
+    "lang": "Haskell",
+    "repo": "haskell/containers",
+    "sha": "c9c0c887ca9ff6934e46ca1415ef9a41d31e2eca",
+    "path": "containers/src/Data/Tree.hs",
+    "start": 545,
+    "end": 558,
+    "license": "BSD-3-Clause",
+    "code": "unfoldForestQ f aQ = case viewl aQ of\n    EmptyL -> return empty\n    a :< aQ' -> do\n        (b, as) <- f a\n        tQ <- unfoldForestQ f (Prelude.foldl (|>) aQ' as)\n        let (tQ', ts) = splitOnto [] as tQ\n        return (Node b ts <| tQ')\n  where\n    splitOnto :: [a'] -> [b'] -> Seq a' -> (Seq a', [a'])\n    splitOnto as [] q = (q, as)\n    splitOnto as (_:bs) q = case viewr q of\n        q' :> a -> splitOnto (a:as) bs q'\n        EmptyR -> error \"unfoldForestQ\"\n{-# INLINABLE unfoldForestQ #-}"
+  },
+  {
+    "lang": "Groovy",
+    "repo": "apache/groovy",
+    "sha": "87ffe062aa86565af1abe2caea7d7d7d16f2c0a6",
+    "path": "src/main/groovy/groovy/util/ConfigSlurper.groovy",
+    "start": 145,
+    "end": 158,
+    "license": "Apache-2.0",
+    "code": "        def tokens = key.split(/\\./)\n\n        def current = config\n        def last\n        def lastToken\n        def foundBase = false\n        for (token in tokens) {\n            if (foundBase) {\n                // handle not properly nested tokens by ignoring\n                // hierarchy below this point\n                lastToken += '.' + token\n                current = last\n            } else {\n                last = current"
+  },
+  {
+    "lang": "Odin",
+    "repo": "odin-lang/Odin",
+    "sha": "f6a2d51eb06a9cf41196483658959efc164d339e",
+    "path": "core/fmt/fmt.odin",
+    "start": 606,
+    "end": 619,
+    "license": "Zlib",
+    "code": "\t\ti   := index\n\t\tend := len(fmt)\n\n\t\t// Prefix\n\t\tprefix_loop: for ; i < end; i += 1 {\n\t\t\tswitch fmt[i] {\n\t\t\tcase '+':\n\t\t\t\tfi.plus = true\n\t\t\tcase '-':\n\t\t\t\tfi.minus = true\n\t\t\t\tfi.zero = false\n\t\t\tcase ' ':\n\t\t\t\tfi.space = true\n\t\t\tcase '#':"
+  },
+  {
+    "lang": "Dart",
+    "repo": "dart-lang/core",
+    "sha": "eef4a3045a0e930a5ac3365f7b1c4bf22723c392",
+    "path": "pkgs/collection/lib/src/iterable_extensions.dart",
+    "start": 31,
+    "end": 44,
+    "license": "BSD-3-Clause",
+    "code": "  List<T> sample(int count, [Random? random]) {\n    RangeError.checkNotNegative(count, 'count');\n    var iterator = this.iterator;\n    var chosen = <T>[];\n    random ??= Random();\n    while (chosen.length < count) {\n      if (iterator.moveNext()) {\n        var nextElement = iterator.current;\n        var position = random.nextInt(chosen.length + 1);\n        if (position == chosen.length) {\n          chosen.add(nextElement);\n        } else {\n          chosen.add(chosen[position]);\n          chosen[position] = nextElement;"
+  },
+  {
+    "lang": "Assembly",
+    "repo": "jart/sectorlisp",
+    "sha": "162c845c1dc3d0ac445951b6ef5af9f660682143",
+    "path": "sectorlisp.S",
+    "start": 28,
+    "end": 41,
+    "license": "ISC",
+    "code": "_start:\t.asciz\t\"NIL\"\t\t\t\t# dec %si ; dec %cx ; dec %sp\nkT:\t.asciz\t\"T\"\t\t\t\t# add %dl,(%si) boot A:\\ DL=0\nstart:\tljmp\t$0x7c00>>4,$begin\t\t# cs = 0x7c00 is boot address\n\t.asciz\t\"\"\t\t\t\t# interned strings\nkQuote:\t.asciz\t\"QUOTE\"\t\t\t\t# builtin for eval\nkCond:\t.asciz\t\"COND\"\t\t\t\t# builtin for eval\nkRead:\t.asciz\t\"READ\"\t\t\t\t# builtin to apply\nkPrint:\t.asciz\t\"PRINT\"\t\t\t\t# builtin to apply\nkCar:\t.asciz\t\"CAR\"\t\t\t\t# builtin to apply\nkCdr:\t.asciz\t\"CDR\"\t\t\t\t# ordering matters\nkCons:\t.asciz\t\"CONS\"\t\t\t\t# must be 3rd last\nkEq:\t.asciz\t\"EQ\"\t\t\t\t# must be 2nd last\nkAtom:\t.asciz\t\"ATOM\"\t\t\t\t# needs to be last\n"
+  },
+  {
+    "lang": "Racket",
+    "repo": "racket/racket",
+    "sha": "51c0ade4b15dbac8f30aaf9c940117998b9cf45c",
+    "path": "racket/collects/racket/file.rkt",
+    "start": 383,
+    "end": 396,
+    "license": "MIT OR Apache-2.0",
+    "code": "(define-for-syntax (syntax->tmp-context-string stx)\n  (define line   (syntax-line stx))\n  (define col    (syntax-column stx))\n  (define source (syntax-source stx))\n  (define pos    (syntax-position stx))\n  (define str-src\n    (cond [(path? source)\n           (regexp-replace #rx\"^<(.*?)>(?=/)\"\n                           (path->relative-string/library source)\n                           (lambda (_ s) (string-upcase s)))]\n          [(string? source) source]\n          [else #f]))\n  (define str-loc\n    (cond [(and line col) (format \"-~a-~a\" line col)]"
+  },
+  {
+    "lang": "C#",
+    "repo": "dotnet/runtime",
+    "sha": "00236714c28b30ae2522b348d11315e509cf4425",
+    "path": "src/libraries/System.Linq/src/System/Linq/AppendPrepend.cs",
+    "start": 193,
+    "end": 206,
+    "license": "MIT",
+    "code": "            public override bool MoveNext()\n            {\n                switch (_state)\n                {\n                    case 1:\n                        _node = _prepended;\n                        _state = 2;\n                        goto case 2;\n                    case 2:\n                        if (_node is not null)\n                        {\n                            _current = _node.Item;\n                            _node = _node.Linked;\n                            return true;"
+  },
+  {
+    "lang": "TypeScript",
+    "repo": "microsoft/vscode",
+    "sha": "c37c86bfa1cdf13745aef68f67ed272705ac84c2",
+    "path": "src/vs/base/common/arrays.ts",
+    "start": 128,
+    "end": 141,
+    "license": "MIT",
+    "code": "\tnth = Math.trunc(nth);\n\n\tconst pivotValue = data[Math.floor(data.length * Math.random())];\n\tconst lower: T[] = [];\n\tconst higher: T[] = [];\n\tconst pivots: T[] = [];\n\n\tfor (const value of data) {\n\t\tconst val = compare(value, pivotValue);\n\t\tif (val < 0) {\n\t\t\tlower.push(value);\n\t\t} else if (val > 0) {\n\t\t\thigher.push(value);\n\t\t} else {"
+  },
+  {
+    "lang": "Perl",
+    "repo": "mojolicious/mojo",
+    "sha": "d232174795b0b6b019e9a1f67e8400025b073d7b",
+    "path": "lib/Mojo/Exception.pm",
+    "start": 108,
+    "end": 121,
+    "license": "Artistic-2.0",
+    "code": "sub throw { CORE::die shift->new(shift)->trace }\n\nsub trace {\n  my ($self, $start) = (shift, shift // 1);\n  my @frames;\n  while (my @trace = caller($start++)) { push @frames, \\@trace }\n  return $self->frames(\\@frames);\n}\n\nsub _append {\n  my ($stack, $line) = @_;\n  $line = decode('UTF-8', $line) // $line;\n  chomp $line;\n  push @$stack, $line;"
+  },
+  {
+    "lang": "Nim",
+    "repo": "nim-lang/Nim",
+    "sha": "5b66f3bfeb99e8f858a1888c3ae6730ec3c8baf4",
+    "path": "lib/pure/asynchttpserver.nim",
+    "start": 204,
+    "end": 217,
+    "license": "MIT",
+    "code": "  result = fraOk\n  let te = request.headers.hasKey(\"Transfer-Encoding\")\n  if te:\n    if request.headers.hasKey(\"Content-Length\"):\n      # A sender must not send both; a proxy could use either of them.\n      return fraBad\n    if request.protocol == HttpVer10:\n      return fraBad\n    var codings: seq[string] = @[]\n    for coding in seq[string](request.headers[\"Transfer-Encoding\"]):\n      let c = coding.strip(chars = {' ', '\\t'})\n      if c.len > 0: codings.add c\n    if codings.len == 0: return fraBad\n    for c in codings:"
+  },
+  {
+    "lang": "Crystal",
+    "repo": "crystal-lang/crystal",
+    "sha": "85387f04a450e95b7f1082d22569330f606adec2",
+    "path": "src/base64.cr",
+    "start": 203,
+    "end": 216,
+    "license": "Apache-2.0",
+    "code": "    bytes = chars.to_unsafe\n    size = data.size\n    cstr = data.to_unsafe\n    return if cstr.null? || size == 0\n    endcstr = cstr + size - size % 3 - 3\n\n    # process bunch of full triples\n    while cstr < endcstr\n      n = cstr.as(UInt32*).value.byte_swap\n      yield bytes[(n >> 26) & 63]\n      yield bytes[(n >> 20) & 63]\n      yield bytes[(n >> 14) & 63]\n      yield bytes[(n >> 8) & 63]\n      cstr += 3"
+  },
+  {
+    "lang": "Prolog",
+    "repo": "SWI-Prolog/swipl-devel",
+    "sha": "cd05fcd067b99a1a2ecdbb5dd899cea34faf0565",
+    "path": "library/apply_macros.pl",
+    "start": 108,
+    "end": 121,
+    "license": "BSD-2-Clause",
+    "code": "expand_maplist(Callable0, Lists, Goal) :-\n    length(Lists, N),\n    expand_closure_no_fail(Callable0, N, Callable1),\n    (   Callable1 = _:_\n    ->  strip_module(Callable1, M, Callable),\n        NextGoal = M:NextCall,\n        QPred = M:Pred\n    ;   Callable = Callable1,\n        NextGoal = NextCall,\n        QPred = Pred\n    ),\n    Callable =.. [Pred|Args],\n    length(Args, Argc),\n    length(Argv, Argc),"
+  },
+  {
+    "lang": "Gleam",
+    "repo": "lpil/wisp",
+    "sha": "446a7dd64bd2753958b56481a492bc94e491824c",
+    "path": "src/wisp/simulate.gleam",
+    "start": 51,
+    "end": 64,
+    "license": "Apache-2.0",
+    "code": "pub fn session(\n  next_request: Request,\n  previous_request: Request,\n  previous_response: Response,\n) -> Request {\n  let request = case list.key_find(previous_request.headers, \"cookie\") {\n    Ok(cookies) -> header(next_request, \"cookie\", cookies)\n    Error(_) -> next_request\n  }\n\n  let set_cookies =\n    // Get the newly set cookies\n    list.key_filter(previous_response.headers, \"set-cookie\")\n    // Parse them to get the name, value, and attributes"
+  },
+  {
+    "lang": "Elm",
+    "repo": "elm/core",
+    "sha": "65cea00afa0de03d7dda0487d964a305fc3d58e3",
+    "path": "src/List.elm",
+    "start": 404,
+    "end": 417,
+    "license": "BSD-3-Clause",
+    "code": "intersperse sep xs =\n  case xs of\n    [] ->\n      []\n\n    hd :: tl ->\n      let\n        step x rest =\n          cons sep (cons x rest)\n\n        spersed =\n          foldr step [] tl\n      in\n        cons hd spersed"
+  },
+  {
+    "lang": "CoffeeScript",
+    "repo": "jashkenas/coffeescript",
+    "sha": "116890ee072305d3f4ad2686b70c9f28b967c11d",
+    "path": "src/lexer.coffee",
+    "start": 97,
+    "end": 110,
+    "license": "MIT",
+    "code": "  clean: (code) ->\n    thusFar = 0\n    if code.charCodeAt(0) is BOM\n      code = code.slice 1\n      @locationDataCompensations[0] = 1\n      thusFar += 1\n    if WHITESPACE.test code\n      code = \"\\n#{code}\"\n      @chunkLine--\n      @locationDataCompensations[0] ?= 0\n      @locationDataCompensations[0] -= 1\n    code = code\n      .replace /\\r/g, (match, offset) =>\n        @locationDataCompensations[thusFar + offset] = 1"
+  },
+  {
+    "lang": "D",
+    "repo": "dlang/phobos",
+    "sha": "4f4e2a453b9f3697f486d141fa6e4cb75c84f5f4",
+    "path": "std/concurrency.d",
+    "start": 120,
+    "end": 133,
+    "license": "BSL-1.0",
+    "code": "private\n{\n    bool hasLocalAliasing(Types...)()\n    {\n        import std.typecons : Rebindable;\n\n        // Works around \"statement is not reachable\"\n        bool doesIt = false;\n        static foreach (T; Types)\n        {\n            static if (is(T == Tid))\n            { /* Allowed */ }\n            else static if (is(T : Rebindable!R, R))\n                doesIt |= hasLocalAliasing!R;"
+  },
+  {
+    "lang": "Lua",
+    "repo": "rxi/lume",
+    "sha": "98847e7812cf28d3d64b289b03fad71dc704547d",
+    "path": "lume.lua",
+    "start": 508,
+    "end": 521,
+    "license": "MIT",
+    "code": "  local n = select('#', ...)\n  if n == 0 then return noop end\n  if n == 1 then\n    local fn = select(1, ...)\n    if not fn then return noop end\n    assert(iscallable(fn), \"expected a function or nil\")\n    return fn\n  end\n  local funcs = {}\n  for i = 1, n do\n    local fn = select(i, ...)\n    if fn ~= nil then\n      assert(iscallable(fn), \"expected a function or nil\")\n      funcs[#funcs + 1] = fn"
+  },
+  {
+    "lang": "PureScript",
+    "repo": "purescript/purescript-prelude",
+    "sha": "e789260bb354071f8d43ed482e821b9381855315",
+    "path": "src/Data/Eq.purs",
+    "start": 97,
+    "end": 110,
+    "license": "BSD-3-Clause",
+    "code": "class EqRecord :: RL.RowList Type -> Row Type -> Constraint\nclass EqRecord rowlist row where\n  eqRecord :: Proxy rowlist -> Record row -> Record row -> Boolean\n\ninstance eqRowNil :: EqRecord RL.Nil row where\n  eqRecord _ _ _ = true\n\ninstance eqRowCons ::\n  ( EqRecord rowlistTail row\n  , Row.Cons key focus rowTail row\n  , IsSymbol key\n  , Eq focus\n  ) =>\n  EqRecord (RL.Cons key focus rowlistTail) row where"
+  },
+  {
+    "lang": "Fortran",
+    "repo": "fortran-lang/fpm",
+    "sha": "ceb133e37ec6e7aeac7815485c17d5af81c79ee6",
+    "path": "src/fpm_model.f90",
+    "start": 287,
+    "end": 300,
+    "license": "MIT",
+    "code": "    s = s // \", modules_provided=[\"\n    do i = 1, size(source%modules_provided)\n        s = s // '\"' // source%modules_provided(i)%s // '\"'\n        if (i < size(source%modules_provided)) s = s // \", \"\n    end do\n    s = s // \"]\"\n    s = s // \", parent_modules=[\"\n    do i = 1, size(source%parent_modules)\n        s = s // '\"' // source%parent_modules(i)%s // '\"'\n        if (i < size(source%parent_modules)) s = s // \", \"\n    end do\n    s = s // \"]\"\n    !    integer :: unit_type = FPM_UNIT_UNKNOWN\n    s = s // ', unit_type=\"' // FPM_UNIT_NAME(source%unit_type) // '\"'"
+  },
+  {
+    "lang": "OCaml",
+    "repo": "janestreet/base",
+    "sha": "49a861eb32041978d72e369f85f89a4547a50f1f",
+    "path": "src/array.ml",
+    "start": 185,
+    "end": 198,
+    "license": "MIT",
+    "code": "      let sixth = (right - left) / 6 in\n      let m1 = left + sixth in\n      let m2 = m1 + sixth in\n      let m3 = m2 + sixth in\n      let m4 = m3 + sixth in\n      let m5 = m4 + sixth in\n      five_element_sort arr ~compare m1 m2 m3 m4 m5;\n      let m2_val = get arr m2 in\n      let m3_val = get arr m3 in\n      let m4_val = get arr m4 in\n      if compare m2_val m3_val = 0\n      then m2_val, m3_val, true\n      else if compare m3_val m4_val = 0\n      then m3_val, m4_val, true"
+  },
+  {
+    "lang": "Verilog",
+    "repo": "YosysHQ/picorv32",
+    "sha": "ef203c2b0a3fb793280f5114941416c425c5b461",
+    "path": "testbench_ez.v",
+    "start": 61,
+    "end": 74,
+    "license": "ISC",
+    "code": "\treg [31:0] memory [0:255];\n\n\tinitial begin\n\t\tmemory[0] = 32'h 3fc00093; //       li      x1,1020\n\t\tmemory[1] = 32'h 0000a023; //       sw      x0,0(x1)\n\t\tmemory[2] = 32'h 0000a103; // loop: lw      x2,0(x1)\n\t\tmemory[3] = 32'h 00110113; //       addi    x2,x2,1\n\t\tmemory[4] = 32'h 0020a023; //       sw      x2,0(x1)\n\t\tmemory[5] = 32'h ff5ff06f; //       j       <loop>\n\tend\n\n\talways @(posedge clk) begin\n\t\tmem_ready <= 0;\n\t\tif (mem_valid && !mem_ready) begin"
+  },
+  {
+    "lang": "Erlang",
+    "repo": "ninenines/cowboy",
+    "sha": "29c1f222f5a22749fd0f47a0efba40e115c02577",
+    "path": "src/cowboy_clock.erl",
+    "start": 131,
+    "end": 144,
+    "license": "ISC",
+    "code": "update_rfc1123(_, _, {Date = {Y, Mo, D}, {H, M, S}}) ->\n\tWday = calendar:day_of_the_week(Date),\n\t<< (weekday(Wday))/binary, \", \", (pad_int(D))/binary, \" \",\n\t\t(month(Mo))/binary, \" \", (integer_to_binary(Y))/binary,\n\t\t\" \", (pad_int(H))/binary, $:, (pad_int(M))/binary,\n\t\t$:, (pad_int(S))/binary, \" GMT\" >>.\n\n%% Following suggestion by MononcQc on #erlounge.\n-spec pad_int(0..59) -> binary().\npad_int(X) when X < 10 ->\n\t<< $0, ($0 + X) >>;\npad_int(X) ->\n\tinteger_to_binary(X).\n"
+  },
+  {
+    "lang": "F#",
+    "repo": "dotnet/fsharp",
+    "sha": "57f77cbac4923aa41cf308711553232dfd608da7",
+    "path": "src/FSharp.Core/array3.fs",
+    "start": 57,
+    "end": 70,
+    "license": "MIT",
+    "code": "    [<CompiledName(\"Iterate\")>]\n    let iter action array =\n        checkNonNull \"array\" array\n        let len1 = length1 array\n        let len2 = length2 array\n        let len3 = length3 array\n        for i = 0 to len1 - 1 do\n          for j = 0 to len2 - 1 do\n            for k = 0 to len3 - 1 do\n              action array.[i,j,k]\n\n    [<CompiledName(\"Map\")>]\n    let map mapping array =\n        checkNonNull \"array\" array"
+  },
+  {
+    "lang": "Kotlin",
+    "repo": "Kotlin/kotlinx.coroutines",
+    "sha": "2ac8def478229b9cacd2c18f07a2e83a10a3aa84",
+    "path": "kotlinx-coroutines-core/common/src/Builders.common.kt",
+    "start": 284,
+    "end": 297,
+    "license": "Apache-2.0",
+    "code": "public fun <T> CoroutineScope.async(\n    context: CoroutineContext = EmptyCoroutineContext,\n    start: CoroutineStart = CoroutineStart.DEFAULT,\n    block: suspend CoroutineScope.() -> T\n): Deferred<T> {\n    val newContext = newCoroutineContext(context)\n    val coroutine = if (start.isLazy)\n        LazyDeferredCoroutine(newContext, block) else\n        DeferredCoroutine<T>(newContext, active = true)\n    coroutine.start(start, coroutine, block)\n    return coroutine\n}\n\n@OptIn(InternalForInheritanceCoroutinesApi::class)"
+  },
+  {
+    "lang": "Zig",
+    "repo": "tigerbeetle/tigerbeetle",
+    "sha": "a2a3c7064519e08233abe26c54a43fca2f9ad9bc",
+    "path": "src/copyhound.zig",
+    "start": 109,
+    "end": 122,
+    "license": "Apache-2.0",
+    "code": "fn extract_function_name(define: []const u8, buf: []u8) ?[]const u8 {\n    if (!std.mem.endsWith(u8, define, \"{\")) return null;\n\n    _, const mangled_name = stdx.cut(define, \"@\") orelse return null;\n    var buf_count: usize = 0;\n    var level: u32 = 0;\n    for (mangled_name) |c| {\n        switch (c) {\n            '(' => level += 1,\n            ')' => level -= 1,\n            '\"' => {},\n            else => {\n                if (level > 0) continue;\n                if (c == ' ') return buf[0..buf_count];"
+  },
+  {
+    "lang": "Objective-C",
+    "repo": "SDWebImage/SDWebImage",
+    "sha": "c3ad5e1a9bf55c9b76d4c362430b5fcded96c502",
+    "path": "SDWebImage/Core/SDAnimatedImagePlayer.m",
+    "start": 286,
+    "end": 299,
+    "license": "MIT",
+    "code": "- (void)prefetchFrameAtIndex:(NSUInteger)currentIndex\n                   nextIndex:(NSUInteger)nextIndex {\n    NSUInteger fetchFrameIndex = currentIndex;\n    UIImage *fetchFrame = nil;\n    if (!self.bufferMiss) {\n        fetchFrameIndex = nextIndex;\n        fetchFrame = [self.framePool frameAtIndex:nextIndex];\n    }\n    BOOL bufferFull = NO;\n    if (self.framePool.currentFrameCount == self.totalFrameCount) {\n        bufferFull = YES;\n    }\n    if (!fetchFrame && !bufferFull) {\n        // Calculate max buffer size"
+  },
+  {
+    "lang": "PowerShell",
+    "repo": "dahlbyk/posh-git",
+    "sha": "bbc5ac380018239e0ac70411a59f4e367ca87f2d",
+    "path": "src/GitParamTabExpansion.ps1",
+    "start": 2,
+    "end": 15,
+    "license": "MIT",
+    "code": "$shortGitParams = @{\n    add = 'n v f i p e u A N'\n    bisect = ''\n    blame = 'b L l t S p M C h c f n s e w'\n    branch = 'd D l f m M r a v vv q t u'\n    checkout = 'q f b B t l m p'\n    cherry = 'v'\n    'cherry-pick' = 'e x r m n s S X'\n    clean = 'd f i n q e x X'\n    clone = 'l s q v n o b u c'\n    commit = 'a p C c z F m t s n e i o u v q S'\n    config = 'f l z e'\n    diff = 'p u s U z B M C D l S G O R a b w W'\n    difftool = 'd y t x g'"
+  },
+  {
+    "lang": "C",
+    "repo": "libuv/libuv",
+    "sha": "e5dab8432177f43af97bbe032037d273234642ac",
+    "path": "src/unix/async.c",
+    "start": 45,
+    "end": 58,
+    "license": "MIT",
+    "code": "static void uv__kqueue_runtime_detection(void) {\n  int kq;\n  struct kevent ev[2];\n  struct timespec timeout = {0, 0};\n\n  /* Perform the runtime detection to ensure that kqueue with\n   * EVFILT_USER actually works. */\n  kq = kqueue();\n  EV_SET(ev, UV__KQUEUE_EVFILT_USER_IDENT, EVFILT_USER,\n         EV_ADD | EV_CLEAR, 0, 0, 0);\n  EV_SET(ev + 1, UV__KQUEUE_EVFILT_USER_IDENT, EVFILT_USER,\n         0, NOTE_TRIGGER, 0, 0);\n  if (kevent(kq, ev, 2, ev, 1, &timeout) < 1 ||\n      ev[0].filter != EVFILT_USER ||"
+  },
+  {
+    "lang": "Common Lisp",
+    "repo": "ruricolist/serapeum",
+    "sha": "541acbc3d2bc9fc06efce50d07766c7243b5f2b1",
+    "path": "box.lisp",
+    "start": 19,
+    "end": 32,
+    "license": "MIT",
+    "code": "(eval-when (:compile-toplevel :load-toplevel :execute)\n  (defconstant +atomic-accessors+\n    (and (member :ecl *features*)\n         (ignore-errors\n          (eval `(defstruct (,(gensym) :atomic-accessors))))\n         '(:atomic-accessors))))\n\n(declaim (inline box))                  ;Allow dynamic-extent.\n(defstruct (box (:constructor box (unbox))\n                (:predicate boxp)\n                (:conc-name nil)\n                ;; Required for older ECLs only.\n                . #.+atomic-accessors+)\n  \"A box is just a mutable cell."
+  },
+  {
+    "lang": "C++",
+    "repo": "google/leveldb",
+    "sha": "29465588d3dfdc80fba5e198037582b8fdb5dd60",
+    "path": "db/corruption_test.cc",
+    "start": 75,
+    "end": 88,
+    "license": "BSD-3-Clause",
+    "code": "  void Check(int min_expected, int max_expected) {\n    int next_expected = 0;\n    int missed = 0;\n    int bad_keys = 0;\n    int bad_values = 0;\n    int correct = 0;\n    std::string value_space;\n    Iterator* iter = db_->NewIterator(ReadOptions());\n    for (iter->SeekToFirst(); iter->Valid(); iter->Next()) {\n      uint64_t key;\n      Slice in(iter->key());\n      if (in == \"\" || in == \"~\") {\n        // Ignore boundary keys.\n        continue;"
+  },
+  {
+    "lang": "Bash",
+    "repo": "nvm-sh/nvm",
+    "sha": "6f5767a530d186f013dca720c30858577e773f1d",
+    "path": "nvm.sh",
+    "start": 189,
+    "end": 202,
+    "license": "MIT",
+    "code": "  elif nvm_has_executable \"wget\"; then\n    NVM_DOWNLOADER='wget'\n    # Emulate curl with wget\n    local NVM_DOWNLOAD_WGET_COUNT\n    NVM_DOWNLOAD_WGET_COUNT=$#\n    local NVM_DOWNLOAD_WGET_SKIP\n    NVM_DOWNLOAD_WGET_SKIP=0\n    local NVM_DOWNLOAD_WGET_ARG\n    for NVM_DOWNLOAD_WGET_ARG in \"$@\"; do\n      if [ \"${NVM_DOWNLOAD_WGET_SKIP}\" = '1' ]; then\n        NVM_DOWNLOAD_WGET_SKIP=0\n        continue\n      fi\n      case \"${NVM_DOWNLOAD_WGET_ARG}\" in"
+  },
+  {
+    "lang": "Dart",
+    "repo": "dart-lang/core",
+    "sha": "eef4a3045a0e930a5ac3365f7b1c4bf22723c392",
+    "path": "pkgs/collection/lib/src/equality.dart",
+    "start": 324,
+    "end": 337,
+    "license": "BSD-3-Clause",
+    "code": "  @override\n  bool equals(Map<K, V>? map1, Map<K, V>? map2) {\n    if (identical(map1, map2)) return true;\n    if (map1 == null || map2 == null) return false;\n    var length = map1.length;\n    if (length != map2.length) return false;\n    Map<_MapEntry, int> equalElementCounts = HashMap();\n    for (var key in map1.keys) {\n      var entry = _MapEntry(this, key, map1[key]);\n      var count = equalElementCounts[entry] ?? 0;\n      equalElementCounts[entry] = count + 1;\n    }\n    for (var key in map2.keys) {\n      var entry = _MapEntry(this, key, map2[key]);"
+  },
+  {
+    "lang": "Ruby",
+    "repo": "rails/rails",
+    "sha": "4f00fbc946c9ca055e6c1fbc7b40274625766be1",
+    "path": "activesupport/lib/active_support/callbacks.rb",
+    "start": 110,
+    "end": 123,
+    "license": "MIT",
+    "code": "        if next_sequence.final?\n          next_sequence.invoke_before(env)\n          env.value = !env.halted && (!block_given? || yield)\n          next_sequence.invoke_after(env)\n          env.value\n        else\n          invoke_sequence = Proc.new do\n            skipped = nil\n\n            while true\n              current = next_sequence\n              current.invoke_before(env)\n              if current.final?\n                env.value = !env.halted && (!block_given? || yield)"
+  },
+  {
+    "lang": "Fortran",
+    "repo": "fortran-lang/fpm",
+    "sha": "ceb133e37ec6e7aeac7815485c17d5af81c79ee6",
+    "path": "src/fpm_backend.F90",
+    "start": 74,
+    "end": 87,
+    "license": "MIT",
+    "code": "    type(string_t) :: temp\n    type(error_t), allocatable :: error\n\n    type(build_progress_t) :: progress\n    logical :: plain_output\n\n    ! Need to make output directory for include (mod) files\n    allocate(build_dirs(0))\n    do i = 1, size(targets)\n       associate(target => targets(i)%ptr)\n          if (target%output_dir .in. build_dirs) cycle\n          temp%s = target%output_dir\n          build_dirs = [build_dirs, temp]\n       end associate"
+  },
+  {
+    "lang": "Lua",
+    "repo": "Kong/kong",
+    "sha": "1c7a0aa714752a93b9a61779597b1de66063d3a6",
+    "path": "kong/pdk/log.lua",
+    "start": 130,
+    "end": 143,
+    "license": "Apache-2.0",
+    "code": "local function parse_modifiers(format)\n  local buf, err = split(format, [==[(?<!%)(%[a-z_]+)]==], \"jo\")\n  if not buf then\n    return nil, \"could not parse format: \" .. err\n  end\n\n  local buf_len = #buf\n\n  for i = 1, buf_len do\n    local mod = _MODIFIERS[buf[i]]\n    if mod then\n      if mod.message then\n        buf.message_idxs = buf.message_idxs or {}\n        insert(buf.message_idxs, i)"
+  },
+  {
+    "lang": "PHP",
+    "repo": "laravel/framework",
+    "sha": "d04c5abf07b1ce8c6e9058754bdd752201062c14",
+    "path": "src/Illuminate/Support/ConfigurationUrlParser.php",
+    "start": 70,
+    "end": 83,
+    "license": "MIT",
+    "code": "    protected function getPrimaryOptions($url)\n    {\n        return array_filter([\n            'driver' => $this->getDriver($url),\n            'database' => $this->getDatabase($url),\n            'host' => $url['host'] ?? null,\n            'port' => $url['port'] ?? null,\n            'username' => $url['user'] ?? null,\n            'password' => $url['pass'] ?? null,\n        ], fn ($value) => ! is_null($value));\n    }\n\n    /**\n     * Get the database driver from the URL."
+  },
+  {
+    "lang": "Prolog",
+    "repo": "SWI-Prolog/swipl-devel",
+    "sha": "cd05fcd067b99a1a2ecdbb5dd899cea34faf0565",
+    "path": "library/arithmetic.pl",
+    "start": 180,
+    "end": 193,
+    "license": "BSD-2-Clause",
+    "code": "math_goal_expansion(ExprA =:= ExprB, Goal) :-\n    expand_function(ExprA, NativeA, PreA),\n    expand_function(ExprB, NativeB, PreB),\n    tidy((PreA, PreB, NativeA =:= NativeB), Goal).\nmath_goal_expansion(ExprA =\\= ExprB, Goal) :-\n    expand_function(ExprA, NativeA, PreA),\n    expand_function(ExprB, NativeB, PreB),\n    tidy((PreA, PreB, NativeA =\\= NativeB), Goal).\nmath_goal_expansion(ExprA > ExprB, Goal) :-\n    expand_function(ExprA, NativeA, PreA),\n    expand_function(ExprB, NativeB, PreB),\n    tidy((PreA, PreB, NativeA > NativeB), Goal).\nmath_goal_expansion(ExprA < ExprB, Goal) :-\n    expand_function(ExprA, NativeA, PreA),"
+  },
+  {
+    "lang": "JavaScript",
+    "repo": "axios/axios",
+    "sha": "c0d4c900515a55bd1e258eee16adb25c404d56ed",
+    "path": "lib/helpers/AxiosTransformStream.js",
+    "start": 9,
+    "end": 22,
+    "license": "MIT",
+    "code": "  constructor(options) {\n    options = utils.toFlatObject(\n      options,\n      {\n        maxRate: 0,\n        chunkSize: 64 * 1024,\n        minChunkSize: 100,\n        timeWindow: 500,\n        ticksRate: 2,\n        samplesCount: 15,\n      },\n      null,\n      (prop, source) => {\n        return !utils.isUndefined(source[prop]);"
+  },
+  {
+    "lang": "Bash",
+    "repo": "nvm-sh/nvm",
+    "sha": "6f5767a530d186f013dca720c30858577e773f1d",
+    "path": "nvm.sh",
+    "start": 81,
+    "end": 94,
+    "license": "MIT",
+    "code": "nvm_has_non_aliased() {\n  nvm_has \"${1-}\" && ! nvm_is_alias \"${1-}\"\n}\n\nnvm_is_alias() {\n  # this is intentionally not \"command alias\" so it works in zsh.\n  \\alias \"${1-}\" >/dev/null 2>&1\n}\n\nnvm_command_info() {\n  local COMMAND\n  local INFO\n  COMMAND=\"${1}\"\n  if type \"${COMMAND}\" | nvm_grep -q hashed; then"
+  },
+  {
+    "lang": "Python",
+    "repo": "psf/requests",
+    "sha": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
+    "path": "src/requests/models.py",
+    "start": 337,
+    "end": 350,
+    "license": "Apache-2.0",
+    "code": "        data = [] if data is None else data\n        files = [] if files is None else files\n        headers = {} if headers is None else headers\n        params = {} if params is None else params\n        hooks = {} if hooks is None else hooks\n\n        self.hooks = default_hooks()\n        for k, v in list(hooks.items()):\n            self.register_hook(event=k, hook=v)\n\n        self.method = method\n        self.url = url\n        self.headers = headers\n        self.files = files"
+  },
+  {
+    "lang": "OCaml",
+    "repo": "janestreet/base",
+    "sha": "49a861eb32041978d72e369f85f89a4547a50f1f",
+    "path": "src/avltree.ml",
+    "start": 110,
+    "end": 123,
+    "license": "MIT",
+    "code": "      | Empty | Leaf _ -> assert false\n      | Node\n          ({ left = left_node_left\n           ; key = _\n           ; value = _\n           ; height = _\n           ; right = left_node_right\n           } as left_node) ->\n        if height left_node_left >= height left_node_right\n        then (\n          root_node.left <- left_node_right;\n          left_node.right <- tree;\n          update_height tree;\n          update_height left;"
+  },
+  {
+    "lang": "Odin",
+    "repo": "odin-lang/Odin",
+    "sha": "f6a2d51eb06a9cf41196483658959efc164d339e",
+    "path": "core/strings/builder.odin",
+    "start": 1103,
+    "end": 1116,
+    "license": "Zlib",
+    "code": "\tif m := count(to_string(b^), old); m == 0 {\n\t\treturn\n\t}\n\n\tif len(old) == 0 {\n\t\t// NOTE(bill): reserve the necessary memory\n\t\t// new is inserted before every byte + after the last one\n\t\tfound := len(b.buf) + 1\n\t\tif n > 0 {\n\t\t\tfound = min(found, n)\n\t\t}\n\t\tnon_zero_reserve(&b.buf, len(b.buf) + len(new)*found) or_return\n\n\t\tfor i := 0; i <= len(b.buf); i += len(new)+1 {"
+  },
+  {
+    "lang": "C#",
+    "repo": "JamesNK/Newtonsoft.Json",
+    "sha": "52fa3aef1f2cadcd3a3f874251eddc98d3efbbaa",
+    "path": "Src/Newtonsoft.Json/Utilities/Base64Encoder.cs",
+    "start": 107,
+    "end": 120,
+    "license": "MIT",
+    "code": "        {\n            int leftOverBytesCount = count % 3;\n            if (leftOverBytesCount > 0)\n            {\n                count -= leftOverBytesCount;\n                if (_leftOverBytes == null)\n                {\n                    _leftOverBytes = new byte[3];\n                }\n\n                for (int i = 0; i < leftOverBytesCount; i++)\n                {\n                    _leftOverBytes[i] = buffer[index + count + i];\n                }"
+  },
+  {
+    "lang": "Erlang",
+    "repo": "erlang/otp",
+    "sha": "1d0578e3adc04fa721ae0b274a7cf14d5729ff14",
+    "path": "lib/stdlib/src/dets_server.erl",
+    "start": 129,
+    "end": 142,
+    "license": "Apache-2.0",
+    "code": "handle_call(all, _From, State) ->\n    F = fun(X, A) -> [element(1, X) | A] end,\n    {reply, ets:foldl(F, [], ?REGISTRY), State};\nhandle_call({close, Tab}, From, State) ->\n    request([{{close, Tab}, From}], State);\nhandle_call({open, File}, From, State) ->\n    request([{{open, File}, From}], State);\nhandle_call({open, Tab, OpenArgs}, From, State) ->\n    request([{{open, Tab, OpenArgs}, From}], State);\nhandle_call(stop, _From, State) ->\n    {stop, normal, stopped, State};\nhandle_call({set_verbose, What}, _From, State) ->\n    set_verbose(What),\n    {reply, ok, State};"
+  },
+  {
+    "lang": "Objective-C",
+    "repo": "SDWebImage/SDWebImage",
+    "sha": "c3ad5e1a9bf55c9b76d4c362430b5fcded96c502",
+    "path": "SDWebImage/Core/NSData+ImageContentType.h",
+    "start": 17,
+    "end": 30,
+    "license": "MIT",
+    "code": "typedef NSInteger SDImageFormat NS_TYPED_EXTENSIBLE_ENUM;\nstatic const SDImageFormat SDImageFormatUndefined = -1;\nstatic const SDImageFormat SDImageFormatJPEG      = 0;\nstatic const SDImageFormat SDImageFormatPNG       = 1;\nstatic const SDImageFormat SDImageFormatGIF       = 2;\nstatic const SDImageFormat SDImageFormatTIFF      = 3;\nstatic const SDImageFormat SDImageFormatWebP      = 4;\nstatic const SDImageFormat SDImageFormatHEIC      = 5;\nstatic const SDImageFormat SDImageFormatHEIF      = 6;\nstatic const SDImageFormat SDImageFormatPDF       = 7;\nstatic const SDImageFormat SDImageFormatSVG       = 8;\nstatic const SDImageFormat SDImageFormatBMP       = 9;\nstatic const SDImageFormat SDImageFormatRAW       = 10;\n"
+  },
+  {
+    "lang": "Rust",
+    "repo": "BurntSushi/ripgrep",
+    "sha": "178cc027e283fd965cb72d0a7395b219eada170c",
+    "path": "crates/core/main.rs",
+    "start": 163,
+    "end": 176,
+    "license": "Unlicense OR MIT",
+    "code": "    let started_at = std::time::Instant::now();\n    let haystack_builder = args.haystack_builder();\n    let bufwtr = args.buffer_writer();\n    let stats = args.stats().map(std::sync::Mutex::new);\n    let matched = AtomicBool::new(false);\n    let searched = AtomicBool::new(false);\n\n    let mut searcher = args.search_worker(\n        args.matcher()?,\n        args.searcher()?,\n        args.printer(mode, bufwtr.buffer()),\n    )?;\n    args.walk_builder()?.build_parallel().run(|| {\n        let bufwtr = &bufwtr;"
+  },
+  {
+    "lang": "Kotlin",
+    "repo": "Kotlin/kotlinx.coroutines",
+    "sha": "2ac8def478229b9cacd2c18f07a2e83a10a3aa84",
+    "path": "kotlinx-coroutines-core/common/src/Annotations.kt",
+    "start": 27,
+    "end": 40,
+    "license": "Apache-2.0",
+    "code": "@MustBeDocumented\n@Retention(value = AnnotationRetention.BINARY)\n@Target(\n    AnnotationTarget.CLASS,\n    AnnotationTarget.ANNOTATION_CLASS,\n    AnnotationTarget.PROPERTY,\n    AnnotationTarget.FIELD,\n    AnnotationTarget.LOCAL_VARIABLE,\n    AnnotationTarget.VALUE_PARAMETER,\n    AnnotationTarget.CONSTRUCTOR,\n    AnnotationTarget.FUNCTION,\n    AnnotationTarget.PROPERTY_GETTER,\n    AnnotationTarget.PROPERTY_SETTER,\n    AnnotationTarget.TYPEALIAS"
+  },
+  {
+    "lang": "Groovy",
+    "repo": "apache/groovy",
+    "sha": "87ffe062aa86565af1abe2caea7d7d7d16f2c0a6",
+    "path": "src/main/groovy/groovy/util/ConfigSlurper.groovy",
+    "start": 233,
+    "end": 246,
+    "license": "Apache-2.0",
+    "code": "        def mc = script.class.metaClass\n        def prefix = ''\n        LinkedList stack = new LinkedList()\n        stack << [config: config, scope: [:]]\n        def pushStack = { co ->\n            stack << [config: co, scope: stack.last.scope.clone()]\n        }\n        def assignName = { name, co ->\n            def current = stack.last\n            current.config[name] = co\n            current.scope[name] = co\n        }\n        mc.getProperty = { String name ->\n            def current = stack.last"
+  },
+  {
+    "lang": "C",
+    "repo": "jqlang/jq",
+    "sha": "5c001b18d7237cce1fdba63608732163f978dd23",
+    "path": "src/compile.c",
+    "start": 67,
+    "end": 80,
+    "license": "MIT",
+    "code": "static inst* inst_new(opcode op) {\n  inst* i = jv_mem_alloc(sizeof(inst));\n  i->next = i->prev = 0;\n  i->op = op;\n  i->bytecode_pos = -1;\n  i->bound_by = 0;\n  i->symbol = 0;\n  i->any_unbound = 0;\n  i->referenced = 0;\n  i->nformals = -1;\n  i->nactuals = -1;\n  i->subfn = gen_noop();\n  i->arglist = gen_noop();\n  i->source = UNKNOWN_LOCATION;"
+  },
+  {
+    "lang": "Crystal",
+    "repo": "crystal-lang/crystal",
+    "sha": "85387f04a450e95b7f1082d22569330f606adec2",
+    "path": "src/bit_array.cr",
+    "start": 283,
+    "end": 296,
+    "license": "Apache-2.0",
+    "code": "  def rindex(obj : Bool, offset : Int = size - 1) : Int32?\n    offset = check_index_out_of_bounds(offset) { return nil }\n    start_bit_index, start_sub_index = offset.divmod(32)\n\n    check_rindex_in_bits(start_bit_index, 0, start_sub_index)\n    (start_bit_index - 1).downto(0) do |i|\n      check_rindex_in_bits(i, 0, 31)\n    end\n  end\n\n  private macro check_rindex_in_bits(bits_index, from, to)\n    bits = @bits[{{ bits_index }}]\n    bits = ~bits if !obj\n    bits &= uint32_mask({{ from }}, {{ to }})"
+  },
+  {
+    "lang": "Solidity",
+    "repo": "OpenZeppelin/openzeppelin-contracts",
+    "sha": "7df9390d5989ea2cb7a70ad93f96245d8a82574e",
+    "path": "contracts/token/ERC20/ERC20.sol",
+    "start": 176,
+    "end": 189,
+    "license": "MIT",
+    "code": "    function _update(address from, address to, uint256 value) internal virtual {\n        if (from == address(0)) {\n            // Overflow check required: The rest of the code assumes that totalSupply never overflows\n            _totalSupply += value;\n        } else {\n            uint256 fromBalance = _balances[from];\n            if (fromBalance < value) {\n                revert ERC20InsufficientBalance(from, fromBalance, value);\n            }\n            unchecked {\n                // Overflow not possible: value <= fromBalance <= totalSupply.\n                _balances[from] = fromBalance - value;\n            }\n        }"
+  },
+  {
+    "lang": "Perl",
+    "repo": "mojolicious/mojo",
+    "sha": "d232174795b0b6b019e9a1f67e8400025b073d7b",
+    "path": "lib/Mojo/Base.pm",
+    "start": 141,
+    "end": 154,
+    "license": "Artistic-2.0",
+    "code": "sub new {\n  my $class = shift;\n  bless @_ ? @_ > 1 ? {@_} : {%{$_[0]}} : {}, ref $class || $class;\n}\n\nsub tap {\n  my ($self, $cb) = (shift, shift);\n  $_->$cb(@_) for $self;\n  return $self;\n}\n\nsub with_roles {\n  Carp::croak 'Role::Tiny 2.000001+ is required for roles' unless ROLES;\n  my ($self, @roles) = @_;"
+  },
+  {
+    "lang": "Go",
+    "repo": "gin-gonic/gin",
+    "sha": "0f09c3a9b4626d9fe9979cf4d0521d6ae32ab646",
+    "path": "context.go",
+    "start": 104,
+    "end": 117,
+    "license": "MIT",
+    "code": "\tc.Writer = &c.writermem\n\tc.Params = c.Params[:0]\n\tc.handlers = nil\n\tc.index = -1\n\n\tc.fullPath = \"\"\n\tc.Keys = nil\n\tc.Errors = c.Errors[:0]\n\tc.Accepted = nil\n\tc.queryCache = nil\n\tc.formCache = nil\n\tc.sameSite = 0\n\t*c.params = (*c.params)[:0]\n\t*c.skippedNodes = (*c.skippedNodes)[:0]"
+  },
+  {
+    "lang": "R",
+    "repo": "r-lib/devtools",
+    "sha": "844875479353be7a7ce52a1695f1885f994cdf26",
+    "path": "R/check-win.R",
+    "start": 246,
+    "end": 259,
+    "license": "MIT",
+    "code": "  hidden_nodes <- xml2::xml_find_all(html, \".//input[@type='hidden']\")\n  hidden <- as.list(xml2::xml_attr(hidden_nodes, \"value\"))\n  names(hidden) <- xml2::xml_attr(hidden_nodes, \"name\")\n\n  # Find the <h2> heading for the requested version, then grab the file\n  # input and submit button from the <div> that follows it\n  headings <- xml2::xml_find_all(html, \".//h2\")\n  heading_texts <- xml2::xml_text(headings)\n  idx <- match(version, heading_texts)\n  if (is.na(idx)) {\n    cli::cli_abort(\n      \"Could not find {.val {version}} section in the WinBuilder form.\"\n    )\n  }"
+  },
+  {
+    "lang": "Verilog",
+    "repo": "YosysHQ/picorv32",
+    "sha": "ef203c2b0a3fb793280f5114941416c425c5b461",
+    "path": "picorv32.v",
+    "start": 63,
+    "end": 76,
+    "license": "ISC",
+    "code": "\tparameter [ 0:0] ENABLE_COUNTERS = 1,\n\tparameter [ 0:0] ENABLE_COUNTERS64 = 1,\n\tparameter [ 0:0] ENABLE_REGS_16_31 = 1,\n\tparameter [ 0:0] ENABLE_REGS_DUALPORT = 1,\n\tparameter [ 0:0] LATCHED_MEM_RDATA = 0,\n\tparameter [ 0:0] TWO_STAGE_SHIFT = 1,\n\tparameter [ 0:0] BARREL_SHIFTER = 0,\n\tparameter [ 0:0] TWO_CYCLE_COMPARE = 0,\n\tparameter [ 0:0] TWO_CYCLE_ALU = 0,\n\tparameter [ 0:0] COMPRESSED_ISA = 0,\n\tparameter [ 0:0] CATCH_MISALIGN = 1,\n\tparameter [ 0:0] CATCH_ILLINSN = 1,\n\tparameter [ 0:0] ENABLE_PCPI = 0,\n\tparameter [ 0:0] ENABLE_MUL = 0,"
+  },
+  {
+    "lang": "Racket",
+    "repo": "racket/racket",
+    "sha": "51c0ade4b15dbac8f30aaf9c940117998b9cf45c",
+    "path": "racket/collects/racket/format.rkt",
+    "start": 413,
+    "end": 426,
+    "license": "MIT OR Apache-2.0",
+    "code": "(define (get-sign-parts N sign-mode)\n  (define (get indicator)\n    (if (string? indicator)\n        (values indicator \"\")\n        (values (car indicator) (cadr indicator))))\n  (let ([indicator-table\n         (case sign-mode\n           [(#f) '(\"\"  \"\"  \"-\")]\n           [(+)  '(\"+\" \"\"  \"-\")]\n           [(++) '(\"+\" \"+\" \"-\")]\n           [(parens) '(\"\" \"\" (\"(\" \")\"))]\n           [else sign-mode])])\n    (cond [(or (negative? N) (eqv? -0.0 N))\n           (get (caddr indicator-table))]"
+  },
+  {
+    "lang": "Zig",
+    "repo": "ziglang/zig",
+    "sha": "738d2be9d6b6ef3ff3559130c05159ef53336224",
+    "path": "lib/std/array_list.zig",
+    "start": 834,
+    "end": 847,
+    "license": "MIT",
+    "code": "        pub fn replaceRange(\n            self: *Self,\n            gpa: Allocator,\n            start: usize,\n            len: usize,\n            new_items: []const T,\n        ) Allocator.Error!void {\n            const after_range = start + len;\n            const range = self.items[start..after_range];\n            if (range.len < new_items.len) {\n                const first = new_items[0..range.len];\n                const rest = new_items[range.len..];\n                @memcpy(range[0..first.len], first);\n                try self.insertSlice(gpa, after_range, rest);"
+  },
+  {
+    "lang": "Julia",
+    "repo": "FluxML/Flux.jl",
+    "sha": "7c7726008930204c547f6780e7d021134cc496c9",
+    "path": "src/layers/show.jl",
+    "start": 144,
+    "end": 157,
+    "license": "MIT",
+    "code": "function _layer_string(::IO, a::AbstractArray)\n  full = string(typeof(a))\n  comma = findfirst(',', full)\n  short = isnothing(comma) ? full : full[1:comma] * \"...}\"\n  Base.dims2string(size(a)) * \" \" * short\nend\n\nfunction _big_finale(io::IO, m)\n  ps = trainables(m)\n  if length(ps) > 2\n    pars = underscorise(sum(length, ps; init=0))\n    bytes = Base.format_bytes(Base.summarysize(m))\n    noncnt = _childarray_sum(_->1, m) - length(ps)\n    if noncnt > 0"
+  },
+  {
+    "lang": "SQL",
+    "repo": "postgres/postgres",
+    "sha": "11591f273e6a26fb55728b410538fa2627b19b28",
+    "path": "src/test/regress/sql/amutils.sql",
+    "start": 54,
+    "end": 67,
+    "license": "PostgreSQL",
+    "code": "select prop,\n       pg_index_has_property('onek_hundred'::regclass, prop) as btree,\n       pg_index_has_property('hash_i4_index'::regclass, prop) as hash,\n       pg_index_has_property('gcircleind'::regclass, prop) as gist,\n       pg_index_has_property('sp_radix_ind'::regclass, prop) as spgist,\n       pg_index_has_property('botharrayidx'::regclass, prop) as gin,\n       pg_index_has_property('brinidx'::regclass, prop) as brin\n  from unnest(array['clusterable', 'index_scan', 'bitmap_scan',\n                    'backward_scan',\n                    'bogus']::text[])\n         with ordinality as u(prop,ord)\n order by ord;\n\nselect amname, prop, pg_indexam_has_property(a.oid, prop) as p"
+  },
+  {
+    "lang": "CoffeeScript",
+    "repo": "jashkenas/coffeescript",
+    "sha": "116890ee072305d3f4ad2686b70c9f28b967c11d",
+    "path": "src/optparse.coffee",
+    "start": 85,
+    "end": 98,
+    "license": "MIT",
+    "code": "buildRules = (ruleDeclarations) ->\n  ruleList = for tuple in ruleDeclarations\n    tuple.unshift null if tuple.length < 3\n    buildRule tuple...\n  flagDict = {}\n  for rule in ruleList\n    # `shortFlag` is null if not provided in the rule.\n    for flag in [rule.shortFlag, rule.longFlag] when flag?\n      if flagDict[flag]?\n        throw new Error \"flag #{flag} for switch #{rule.name}\n          was already declared for switch #{flagDict[flag].name}\"\n      flagDict[flag] = rule\n\n  {ruleList, flagDict}"
+  },
+  {
+    "lang": "Swift",
+    "repo": "apple/swift-algorithms",
+    "sha": "8fdd7fe21dc07a4538d6b3b7c873f497ab4d60fe",
+    "path": "Sources/Algorithms/Combinations.swift",
+    "start": 45,
+    "end": 58,
+    "license": "Apache-2.0",
+    "code": "  @inlinable\n  internal init<R: RangeExpression>(\n    _ base: Base,\n    kRange: R\n  ) where R.Bound == Int {\n    let range = kRange.relative(to: 0 ..< .max)\n    self.base = base\n    let baseCount = base.count\n    self.baseCount = baseCount\n    let upperBound = baseCount + 1\n    self.kRange =\n      range.lowerBound < upperBound\n      ? range.clamped(to: 0..<upperBound)\n      : nil"
+  },
+  {
+    "lang": "Clojure",
+    "repo": "funcool/cuerdas",
+    "sha": "b46d61d623f778aae42bfac29db23a05ec5a4af9",
+    "path": "src/cuerdas/core.cljc",
+    "start": 97,
+    "end": 110,
+    "license": "BSD-2-Clause",
+    "code": "(defmacro unsafe-concat\n  \"Unsafe variant of `concat`. Does not add checks on unknown symbols.\"\n  [& params]\n  (if (:ns &env)\n    (let [xform  (make-concat-xform false)\n          params (into [] xform params)\n          stmpl  (reduce c/str \"\\\"\\\"\" (repeat \"+~{}\" (count params)))]\n      (cons 'js* (cons stmpl params)))\n    (cons `c/str params)))\n\n(defn empty?\n  \"Checks if a string is empty.\"\n  [s]\n  (or (nil? s)"
+  },
+  {
+    "lang": "V",
+    "repo": "vlang/v",
+    "sha": "eb484d68088e2ecc8340a35e4a710bf4510c8834",
+    "path": "vlib/os/clearenv.c.v",
+    "start": 46,
+    "end": 59,
+    "license": "MIT",
+    "code": "\tmut environment := map[string]string{}\n\tif block == unsafe { nil } {\n\t\treturn environment\n\t}\n\tmut p := unsafe { block }\n\tfor unsafe { *p } != 0 {\n\t\tmut end := unsafe { p }\n\t\tfor unsafe { *end } != 0 {\n\t\t\tunsafe { end = end + 1 }\n\t\t}\n\t\tentry := unsafe { string_from_wide(p) }\n\t\t// A leading '=' belongs to a hidden name, not to its separator.\n\t\tif separator := entry.index_after('=', 1) {\n\t\t\tenvironment[entry[..separator]] = entry[separator + 1..]"
+  },
+  {
+    "lang": "PureScript",
+    "repo": "purescript/purescript-prelude",
+    "sha": "e789260bb354071f8d43ed482e821b9381855315",
+    "path": "src/Data/Ord.purs",
+    "start": 69,
+    "end": 82,
+    "license": "BSD-3-Clause",
+    "code": "instance ordVoid :: Ord Void where\n  compare _ _ = EQ\n\ninstance ordProxy :: Ord (Proxy a) where\n  compare _ _ = EQ\n\ninstance ordArray :: Ord a => Ord (Array a) where\n  compare = \\xs ys -> compare 0 (ordArrayImpl toDelta xs ys)\n    where\n    toDelta x y =\n      case compare x y of\n        EQ -> 0\n        LT -> 1\n        GT -> -1"
+  },
+  {
+    "lang": "PowerShell",
+    "repo": "dahlbyk/posh-git",
+    "sha": "bbc5ac380018239e0ac70411a59f4e367ca87f2d",
+    "path": "src/GitUtils.ps1",
+    "start": 63,
+    "end": 76,
+    "license": "MIT",
+    "code": "    if (!$gitDir) { return }\n\n    Invoke-Utf8ConsoleCommand {\n        dbg 'Finding branch' $sw\n        $r = ''; $b = ''; $c = ''\n        $step = ''; $total = ''\n        if (Test-Path $gitDir/rebase-merge) {\n            dbg 'Found rebase-merge' $sw\n            if (Test-Path $gitDir/rebase-merge/interactive) {\n                dbg 'Found rebase-merge/interactive' $sw\n                $r = '|REBASE-i'\n            }\n            else {\n                $r = '|REBASE-m'"
+  },
+  {
+    "lang": "Scala",
+    "repo": "scala/scala",
+    "sha": "632df4153c21bf0513f5735967fb1220185ab78a",
+    "path": "src/library/scala/collection/immutable/BitSet.scala",
+    "start": 267,
+    "end": 280,
+    "license": "Apache-2.0",
+    "code": "            case _ =>\n              val minimumNonZeroIndex: Int = i + 1\n              while (!anyChanges && i >= 0) {\n                val oldWord = word(i)\n                currentWord = oldWord & ~bs.word(i)\n                anyChanges ||= currentWord != oldWord\n                i -= 1\n              }\n              if (anyChanges) {\n                val newArray = elems.take(minimumNonZeroIndex + 1)\n                newArray(i + 1) = currentWord\n                while (i >= 0) {\n                  newArray(i) = word(i) & ~bs.word(i)\n                  i -= 1"
+  },
+  {
+    "lang": "D",
+    "repo": "dlang/phobos",
+    "sha": "4f4e2a453b9f3697f486d141fa6e4cb75c84f5f4",
+    "path": "std/ascii.d",
+    "start": 110,
+    "end": 123,
+    "license": "BSL-1.0",
+    "code": "enum ControlChar : char\n{\n    nul = '\\x00', /// Null\n    soh = '\\x01', /// Start of heading\n    stx = '\\x02', /// Start of text\n    etx = '\\x03', /// End of text\n    eot = '\\x04', /// End of transmission\n    enq = '\\x05', /// Enquiry\n    ack = '\\x06', /// Acknowledge\n    bel = '\\x07', /// Bell\n    bs  = '\\x08', /// Backspace\n    tab = '\\x09', /// Horizontal tab\n    lf  = '\\x0A', /// NL line feed, new line\n    vt  = '\\x0B', /// Vertical tab"
+  },
+  {
+    "lang": "Gleam",
+    "repo": "gleam-lang/stdlib",
+    "sha": "9816c72d28ac1fad9433e1ae851d1a3d4a17c64d",
+    "path": "src/gleam/bit_array.gleam",
+    "start": 202,
+    "end": 215,
+    "license": "Apache-2.0",
+    "code": "pub fn inspect(input: BitArray) -> String {\n  inspect_loop(input, \"<<\") <> \">>\"\n}\n\nfn inspect_loop(input: BitArray, accumulator: String) -> String {\n  case input {\n    <<>> -> accumulator\n\n    <<x:size(1)>> -> accumulator <> int.to_string(x) <> \":size(1)\"\n    <<x:size(2)>> -> accumulator <> int.to_string(x) <> \":size(2)\"\n    <<x:size(3)>> -> accumulator <> int.to_string(x) <> \":size(3)\"\n    <<x:size(4)>> -> accumulator <> int.to_string(x) <> \":size(4)\"\n    <<x:size(5)>> -> accumulator <> int.to_string(x) <> \":size(5)\"\n    <<x:size(6)>> -> accumulator <> int.to_string(x) <> \":size(6)\""
+  },
+  {
+    "lang": "Assembly",
+    "repo": "jart/sectorlisp",
+    "sha": "162c845c1dc3d0ac445951b6ef5af9f660682143",
+    "path": "sectorlisp.S",
+    "start": 62,
+    "end": 75,
+    "license": "ISC",
+    "code": "main:\tmov\t%sp,%cx\n\tmov\t$'\\r',%al\n\tcall\tPutChar\t\t\t\t# call first to initialize %dx\n\tcall\tRead\n\tcall\tEval\n\txchg\t%si,%ax\n\tcall\tPrintObject\n\tjmp\tmain\n\nGetToken:\t\t\t\t\t# GetToken():al, dl is g_look\n\tmov\t%cx,%di\n1:\tmov\t%dl,%al\n\tcmp\t$' ',%al\n\tjbe\t2f"
+  },
+  {
+    "lang": "Elixir",
+    "repo": "elixir-lang/elixir",
+    "sha": "2fe54ff89d38abd93192d28e4c97006086e98b82",
+    "path": "lib/elixir/lib/code.ex",
+    "start": 265,
+    "end": 278,
+    "license": "Apache-2.0",
+    "code": "  @type format_opt ::\n          {:file, binary()}\n          | {:line, pos_integer()}\n          | {:line_length, pos_integer()}\n          | {:locals_without_parens, keyword()}\n          | {:force_do_end_blocks, boolean()}\n          | {:migrate, boolean()}\n          | {:migrate_atom_interpolations, boolean()}\n          | {:migrate_bitstring_modifiers, boolean()}\n          | {:migrate_call_parens_on_pipe, boolean()}\n          | {:migrate_charlists_as_sigils, boolean()}\n          | {:migrate_unless, boolean()}\n          | {atom(), term()}\n"
+  },
+  {
+    "lang": "Common Lisp",
+    "repo": "ruricolist/serapeum",
+    "sha": "541acbc3d2bc9fc06efce50d07766c7243b5f2b1",
+    "path": "defining-types.lisp",
+    "start": 76,
+    "end": 89,
+    "license": "MIT",
+    "code": "(defun read-only-slotdef (slot)\n  \"Rewrite SLOT, a structure slot definition, to be read-only.\nNote that if SLOT is of an odd length, then it is treated as being\nwithout an initialization form, and a default initialization form that\nraises an error is supplied.\"\n  (let ((slot (ensure-list slot)))\n    (multiple-value-bind (name initform args)\n        (if (oddp (length slot))\n            ;; Name (1) + keyword arguments (2n) = 2n+1.\n            (destructuring-bind (name . args) slot\n              (values name `(required-argument ',name) args))\n            ;; Name (1) + initform (1) + keyword arguments (2n) = 2n+2.\n            (destructuring-bind (name initform . args) slot\n              (values name initform args)))"
+  },
+  {
+    "lang": "TypeScript",
+    "repo": "colinhacks/zod",
+    "sha": "90bf57b8e96a3729d766fff3185d39b2ab3ba016",
+    "path": "packages/zod/src/v4/core/checks.ts",
+    "start": 384,
+    "end": 397,
+    "license": "MIT",
+    "code": "    const [minimum, maximum] = util.BIGINT_FORMAT_RANGES[def.format];\n\n    inst._zod.check = (payload) => {\n      const input = payload.value;\n\n      if (input < minimum) {\n        payload.issues.push({\n          origin: \"bigint\",\n          input,\n          code: \"too_small\",\n          minimum: minimum as any,\n          inclusive: true,\n          inst,\n          continue: !def.abort,"
+  },
+  {
+    "lang": "F#",
+    "repo": "dotnet/fsharp",
+    "sha": "57f77cbac4923aa41cf308711553232dfd608da7",
+    "path": "src/FSharp.Core/fslib-extra-pervasives.fs",
+    "start": 214,
+    "end": 227,
+    "license": "MIT",
+    "code": "    let getArray (vals: seq<'T>) =\n        match vals with\n        | :? ('T array) as arr -> arr\n        | _ -> Seq.toArray vals\n\n    [<CompiledName(\"CreateArray2D\")>]\n    let array2D (rows: seq<#seq<'T>>) =\n        checkNonNullNullArg \"rows\" rows\n        let rowsArr = getArray rows\n        let m = rowsArr.Length\n\n        if m = 0 then\n            Array2D.zeroCreate<'T> 0 0\n        else"
+  },
+  {
+    "lang": "Nim",
+    "repo": "nim-lang/Nim",
+    "sha": "5b66f3bfeb99e8f858a1888c3ae6730ec3c8baf4",
+    "path": "lib/pure/base64.nim",
+    "start": 200,
+    "end": 213,
+    "license": "MIT",
+    "code": "proc initDecodeTable*(): array[256, char] =\n  # computes a decode table at compile time\n  result = default(array[256, char])\n  for i in 0 ..< 256:\n    let ch = char(i)\n    var code = invalidChar\n    if ch >= 'A' and ch <= 'Z': code = i - 0x00000041\n    if ch >= 'a' and ch <= 'z': code = i - 0x00000047\n    if ch >= '0' and ch <= '9': code = i + 0x00000004\n    if ch == '+' or ch == '-': code = 0x0000003E\n    if ch == '/' or ch == '_': code = 0x0000003F\n    result[i] = char(code)\n\nconst"
+  },
+  {
+    "lang": "Haskell",
+    "repo": "jaspervdj/hakyll",
+    "sha": "064ed163d0224df54099e81754ee23ea2fb9e113",
+    "path": "lib/Hakyll/Core/Dependencies.hs",
+    "start": 182,
+    "end": 195,
+    "license": "BSD-3-Clause",
+    "code": "checkChangedPatterns :: DependencyM ()\ncheckChangedPatterns = do\n    facts <- M.toList . dependencyFacts <$> State.get\n    forM_ facts $ \\(id', deps) -> do\n        deps' <- foldM (go id') [] deps\n        State.modify $ \\s -> s\n            {dependencyFacts = M.insert id' deps' $ dependencyFacts s}\n  where\n    go' _   (IdentifierDependency i) = return $ IdentifierDependency i\n    go' id' (PatternDependency p ls) = do\n        universe <- ask\n        let ls' = S.fromList $ filterMatches p universe\n        if ls == ls'\n            then return $ PatternDependency p ls"
+  },
+  {
+    "lang": "Java",
+    "repo": "spring-projects/spring-framework",
+    "sha": "4cb62d893e09e23791d661e8d9b35aedee7006d0",
+    "path": "spring-core/src/main/java/org/springframework/util/AlternativeJdkIdGenerator.java",
+    "start": 47,
+    "end": 60,
+    "license": "Apache-2.0",
+    "code": "\t@Override\n\tpublic UUID generateId() {\n\t\tbyte[] randomBytes = new byte[16];\n\t\tthis.random.nextBytes(randomBytes);\n\n\t\tlong mostSigBits = 0;\n\t\tfor (int i = 0; i < 8; i++) {\n\t\t\tmostSigBits = (mostSigBits << 8) | (randomBytes[i] & 0xff);\n\t\t}\n\n\t\tlong leastSigBits = 0;\n\t\tfor (int i = 8; i < 16; i++) {\n\t\t\tleastSigBits = (leastSigBits << 8) | (randomBytes[i] & 0xff);\n\t\t}"
+  },
+  {
+    "lang": "C++",
+    "repo": "nlohmann/json",
+    "sha": "abbc29963a3fa7652127a57a9e2a4494ec5b8a6e",
+    "path": "include/nlohmann/detail/string_escape.hpp",
+    "start": 23,
+    "end": 36,
+    "license": "MIT",
+    "code": "{\n    const std::size_t size = s.size();\n    std::size_t run = 0;\n    for (std::size_t i = 0; i < size; ++i)\n    {\n        const char c = s[i];\n        if (c == '~' || c == '/')\n        {\n            out.append(s.data() + run, i - run);\n            out.append(c == '~' ? \"~0\" : \"~1\", 2);\n            run = i + 1;\n        }\n    }\n    out.append(s.data() + run, size - run);"
+  },
+  {
+    "lang": "Elm",
+    "repo": "elm/core",
+    "sha": "65cea00afa0de03d7dda0487d964a305fc3d58e3",
+    "path": "src/Array.elm",
+    "start": 731,
+    "end": 744,
+    "license": "BSD-3-Clause",
+    "code": "    else\n        let\n            endIdx =\n                tailIndex end\n\n            depth =\n                (endIdx - 1)\n                    |> max 1\n                    |> toFloat\n                    |> logBase (toFloat branchFactor)\n                    |> floor\n\n            newShift =\n                max 5 <| depth * shiftStep"
+  }
+]

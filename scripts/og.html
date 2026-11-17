@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Renders web/og.png (1200x630) in headless Chrome. Not deployed. -->
+<meta charset="utf-8">
+<style>
+  body { margin: 0; width: 1200px; height: 630px; background: #0b0d12; color: #e8ecf3;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; display: flex; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .left { flex: 1; padding: 70px 0 0 70px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .mark { background: #38e0a8; color: #0b0d12; font-weight: 800; font-size: 30px; border-radius: 12px; padding: 8px 12px; }
+  .name { font-weight: 700; font-size: 60px; letter-spacing: -0.04em; }
+  .name b { color: #38e0a8; }
+  h1 { font-size: 52px; line-height: 1.1; margin: 52px 0 20px; letter-spacing: -0.02em; }
+  p { font-size: 27px; color: #9099ab; margin: 0; line-height: 1.35; }
+  .squares { font-size: 40px; margin-top: 34px; letter-spacing: 6px; }
+  .right { width: 560px; display: flex; align-items: center; padding-right: 60px; }
+  .code { width: 100%; background: #151922; border: 2px solid #262c39; border-radius: 22px; padding: 26px 0; font-size: 22px; line-height: 1.7; }
+  .row { display: flex; white-space: pre; }
+  .num { width: 64px; padding-right: 20px; text-align: right; color: #4b5366; }
+  .bar { display: inline-block; height: 15px; margin-top: 12px; border-radius: 6px; background: #2a3040; }
+</style>
+<div class="left">
+  <div class="brand"><span class="mark mono">&lt;?&gt;</span><span class="name mono">poly<b>guess</b></span></div>
+  <h1>Which language<br>is this?</h1>
+  <p>Real code from famous open-source<br>projects, a few lines at a time.<br>47 languages. Six guesses. Daily.</p>
+  <div class="squares">⬛🟨🟨🟩</div>
+</div>
+<div class="right">
+  <div class="code mono">
+    <div class="row"><span class="num">1</span>let mutable total = 0</div>
+    <div class="row"><span class="num">2</span>for item in items do</div>
+    <div class="row"><span class="num">3</span>    total &lt;- total + item.Price</div>
+    <div class="row"><span class="num">4</span><span class="bar" style="width:300px"></span></div>
+    <div class="row"><span class="num">5</span><span class="bar" style="width:220px;margin-left:54px"></span></div>
+    <div class="row"><span class="num">6</span><span class="bar" style="width:330px;margin-left:54px"></span></div>
+    <div class="row"><span class="num">7</span><span class="bar" style="width:120px"></span></div>
+    <div class="row"><span class="num">8</span><span class="bar" style="width:260px;margin-left:54px"></span></div>
+    <div class="row"><span class="num">9</span><span class="bar" style="width:180px;margin-left:108px"></span></div>
+  </div>
+</div>

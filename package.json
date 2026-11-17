@@ -1,0 +1,13 @@
+{
+  "name": "polyguess",
+  "version": "0.1.0",
+  "description": "A daily game for programmers: real open-source code, a few lines at a time. Which language is it?",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "snippets": "node scripts/snippets.mjs",
+    "check": "node scripts/snippets.mjs --check",
+    "build": "node scripts/build.mjs"
+  }
+}
