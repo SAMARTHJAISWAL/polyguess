@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>polyguess — guess the language</title>
+  <meta name="description" content="A daily game for programmers. Real code from a famous open-source project, a few lines at a time. Which language is it? Six guesses, 47 languages.">
+  <meta property="og:title" content="polyguess — guess the language">
+  <meta property="og:description" content="Real code from a famous open-source project, a few lines at a time. Which language is it? Six guesses, 47 languages, a new snippet every day.">
+  <meta property="og:image" content="https://polyguess.vercel.app/og.png">
+  <meta property="og:url" content="https://polyguess.vercel.app/">
+  <link rel="canonical" href="https://polyguess.vercel.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f1117">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <button class="icon" id="help-btn" aria-label="How to play">?</button>
+    <div class="brand"><span class="mark">&lt;?&gt;</span><span class="name">poly<b>guess</b></span></div>
+    <div class="right">
+      <button class="icon" id="archive-btn" aria-label="Past days">📅</button>
+      <button class="icon" id="stats-btn" aria-label="Statistics">📊</button>
+    </div>
+  </header>
+
+  <main>
+    <p class="day" id="day"></p>
+    <h1 class="title">Which language is this?</h1>
+
+    <div class="code" id="code" aria-live="polite"></div>
+    <p class="left" id="left"></p>
+
+    <form id="guess-form" class="guess" autocomplete="off">
+      <div class="combo">
+        <input id="guess" role="combobox" aria-expanded="false" aria-controls="matches" aria-autocomplete="list"
+               placeholder="Type a language…" aria-label="Your guess" spellcheck="false" autocapitalize="off" enterkeyhint="go">
+        <ul id="matches" class="matches" role="listbox" hidden></ul>
+      </div>
+      <button id="guess-btn" type="submit">Guess</button>
+      <button id="skip-btn" type="button" class="ghost" title="Costs a guess, shows more lines">Skip</button>
+    </form>
+
+    <ol class="guesses" id="guesses"></ol>
+
+    <section class="result" id="result" hidden>
+      <p class="verdict" id="verdict"></p>
+      <p class="answer" id="answer"></p>
+      <p class="source">From <a id="source" target="_blank" rel="noopener"></a> <span id="license"></span></p>
+      <div class="share-row">
+        <button id="share" type="button">Share</button>
+        <span class="next" id="next"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Every snippet is real code, credited and linked. <a href="https://github.com/SAMARTHJAISWAL/polyguess/issues/new?template=snippet.yml">Suggest a snippet</a> · MIT
+  </footer>
+
+  <dialog id="help">
+    <h2>How to play</h2>
+    <p>Every day there's a snippet of <b>real code</b> from a well-known open-source project. Guess which language it's written in.</p>
+    <p>You start with 3 lines. Each wrong guess shows more, up to 14 lines. You have <b>six guesses</b>.</p>
+    <ul class="legend">
+      <li><span>🟩</span> right language</li>
+      <li><span>🟨</span> wrong, but a close relative (same family)</li>
+      <li><span>⬛</span> wrong family</li>
+      <li><span>⬜</span> skipped: costs a guess, shows more code</li>
+    </ul>
+    <details>
+      <summary>The 47 languages and their families</summary>
+      <dl class="families" id="families"></dl>
+    </details>
+    <p>A new snippet appears at midnight.</p>
+    <button class="close" type="button">Play</button>
+  </dialog>
+
+  <dialog id="stats">
+    <h2>Statistics</h2>
+    <div class="numbers" id="stat-numbers"></div>
+    <h3>Guesses to win</h3>
+    <div class="spread" id="spread"></div>
+    <button class="close" type="button">Close</button>
+  </dialog>
+
+  <dialog id="archive">
+    <h2>Past days</h2>
+    <p class="muted">Play earlier snippets. They don't count towards your streak.</p>
+    <ol class="days" id="days"></ol>
+    <button class="close" type="button">Close</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
